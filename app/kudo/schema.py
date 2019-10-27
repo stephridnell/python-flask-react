@@ -1,5 +1,4 @@
 from marshmallow import Schema, fields
-pipenv install pymongo==3.7.2
 
 class GithubRepoSchema(Schema):
   id = fields.Int(required=True)
