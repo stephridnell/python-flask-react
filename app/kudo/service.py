@@ -11,7 +11,9 @@ class Service(object):
       raise Exception("User id not provided")
 
     def find_all_kudos(self):
-      kudos  = self.repo_client.find_all({'user_id': self.user_id})
+      kudos  = self.repo_client.find_all({
+        'user_id': self.user_id
+      })
       return [self.dump(kudo) for kudo in kudos]
 
     def find_kudo(self, repo_id):
@@ -33,7 +35,10 @@ class Service(object):
       return records_affected > 0
 
     def delete_kudo_for(self, repo_id):
-      records_affected = self.repo_client.delete({'user_id': self.user_id, 'repo_id': repo_id})
+      records_affected = self.repo_client.delete({
+        'user_id': self.user_id,
+        'repo_id': repo_id
+      })
       return records_affected > 0
 
     def dump(self, data):
