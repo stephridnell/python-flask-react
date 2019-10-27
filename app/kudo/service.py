@@ -8,7 +8,7 @@ class Service(object):
     self.user_id = user_id
 
     if not user_id:
-      raise Exception("user id not provided")
+      raise Exception("User id not provided")
 
     def find_all_kudos(self):
       kudos  = self.repo_client.find_all({'user_id': self.user_id})
